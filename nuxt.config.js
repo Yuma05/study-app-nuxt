@@ -62,4 +62,9 @@ export default {
       },
     },
   },
+
+  // VueDevtools を使えるようにする
+  vue: {
+    devtools: true,
+  },
 }
