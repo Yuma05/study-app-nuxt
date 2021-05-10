@@ -75,7 +75,7 @@ export default {
         if (authUser.is_admin) {
           this.$router.push('/admin')
         } else {
-          this.$router.push('/client')
+          this.$router.push('/user')
         }
       } catch (error) {
         this.isShowError = true
