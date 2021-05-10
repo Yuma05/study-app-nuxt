@@ -16,6 +16,17 @@
             <v-list-item-title v-text="item.title" />
           </v-list-item-content>
         </v-list-item>
+        <v-list-item>
+          <v-btn
+            color="blue"
+            outlined
+            small
+            class="mx-auto"
+            @click="$store.dispatch('auth/logout')"
+          >
+            Logout
+          </v-btn>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
     <v-app-bar fixed color="white" app>
