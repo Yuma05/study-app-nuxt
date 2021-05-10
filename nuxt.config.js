@@ -1,3 +1,6 @@
+require('dotenv').config()
+const { API_URL } = process.env
+
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
@@ -61,5 +64,14 @@ export default {
         options.loose = true
       },
     },
+  },
+
+  // VueDevtools を使えるようにする
+  vue: {
+    devtools: true,
+  },
+
+  env: {
+    API_URL,
   },
 }
