@@ -1,4 +1,6 @@
 # study-app-nuxt
+## 概要
+https://www.notion.so/yumemi/7735ae6172de4deb84444286c6b28dea
 
 ## Build Setup
 
