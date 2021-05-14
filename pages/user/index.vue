@@ -58,41 +58,29 @@ import { mapGetters } from 'vuex'
 import { getError } from '~/utils/helpers'
 export default {
   layout: 'user',
+  async asyncData({ store }) {
+    await store.dispatch('auth/getAuthUser')
+    const categoryResponse = await UserService.getCategory().catch((err) => {
+      return getError(err)
+    })
+    const statusResponse = await UserService.getStatus().catch((err) => {
+      return getError(err)
+    })
+    return {
+      categories: categoryResponse.data.data,
+      statuses: statusResponse.data.data,
+    }
+  },
   data: () => ({
-    categories: null,
-    statuses: null,
     completeCount: null,
   }),
   computed: {
     ...mapGetters('auth', ['authUser']),
   },
   mounted() {
-    this.$store.dispatch('auth/getAuthUser')
-    this.getCategory()
-    this.getStatus()
-  },
-  methods: {
-    getCategory() {
-      UserService.getCategory()
-        .then((res) => {
-          this.categories = res.data.data
-        })
-        .catch((error) => {
-          getError(error)
-        })
-    },
-    getStatus() {
-      UserService.getStatus()
-        .then((res) => {
-          this.statuses = res.data.data
-          this.completeCount = this.statuses.filter(
-            (item) => item.is_complete === 1
-          ).length
-        })
-        .catch((error) => {
-          getError(error)
-        })
-    },
+    this.completeCount = this.statuses.filter(
+      (item) => item.is_complete === 1
+    ).length
   },
 }
 </script>
