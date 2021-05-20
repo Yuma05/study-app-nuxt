@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app style="background-color: #f9fbfe">
     <v-navigation-drawer v-model="drawer" temporary fixed app>
       <v-list>
         <v-list-item
@@ -34,9 +34,7 @@
       <v-toolbar-title v-text="title" />
     </v-app-bar>
     <v-main>
-      <v-container>
-        <nuxt />
-      </v-container>
+      <nuxt />
     </v-main>
   </v-app>
 </template>
