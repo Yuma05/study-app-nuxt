@@ -35,7 +35,11 @@
     </p>
     <v-row justify="start">
       <v-col v-for="category in categories" :key="category" cols="4">
-        <v-card class="mx-auto mt-5" nuxt :href="'material/' + category.id">
+        <v-card
+          class="mx-auto mt-5"
+          nuxt
+          :href="'user/material/' + category.id"
+        >
           <v-row align="end" class="fill-height">
             <v-col cols="auto" class="py-0">
               <v-avatar color="grey" size="80" rounded>
