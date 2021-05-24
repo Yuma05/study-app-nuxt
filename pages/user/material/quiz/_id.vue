@@ -122,8 +122,8 @@ export default {
       this.loaded = true
     },
     pickUpColor(item) {
-      const correctColor = 'pink lighten-5'
-      const incorrectColor = 'blue lighten-5'
+      const correctColor = 'white'
+      const incorrectColor = 'pink lighten-5'
       if (this.isAfterScoring) {
         return item.is_correct ? correctColor : incorrectColor
       }
