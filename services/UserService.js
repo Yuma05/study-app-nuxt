@@ -10,8 +10,11 @@ export default {
   getStatus() {
     return API.apiClient.get('/status')
   },
-  getMaterial(categoryId) {
-    return API.apiClient.get('/material/' + categoryId)
+  getMaterials(categoryId) {
+    return API.apiClient.get('/materials/' + categoryId)
+  },
+  getMaterial(id) {
+    return API.apiClient.get('/material/' + id)
   },
   getQuiz(materialId) {
     return API.apiClient.get('/quiz/' + materialId)

@@ -68,7 +68,7 @@ export default {
   layout: 'client',
   async asyncData(context) {
     const categoryId = context.params.id
-    const materialsResponse = await UserService.getMaterial(categoryId).catch(
+    const materialsResponse = await UserService.getMaterials(categoryId).catch(
       (err) => {
         return getError(err)
       }
